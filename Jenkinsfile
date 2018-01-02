@@ -4,11 +4,7 @@ pipeline {
     stage('error') {
       steps {
         sh '/opt/maven/bin/mvn deploy'
-        input(message: 'Deploy to Sandbox', id: 'nexusCredentials', ok: 'username')
-        waitUntil() {
-          sh 'echo hello'
-        }
-        
+        input(message: 'Deploy to Sandbox', id: 'deployToSandbox')
       }
     }
   }
