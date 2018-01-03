@@ -4,7 +4,7 @@ pipeline {
     stage('error') {
       steps {
         sh '/opt/maven/bin/mvn deploy'
-        input(message: 'Deploy to Sandbox', id: 'deployToSandbox')
+        input(message: 'Deploy to Sandbox', id: 'deployToSandbox', submitter: 'shegde')
       }
     }
   }
